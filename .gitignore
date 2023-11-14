@@ -1,0 +1,62 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+*.java.hsp
+*.sonarj
+*.sw*
+.settings
+.springBeans
+#bin
+#build.sh
+integration-repo
+ivy-cache
+jxl.log
+jmx.log
+derby.log
+spring-test/test-output/
+.gradle
+argfile*
+#pom.xml
+activemq-data/
+
+classes/
+/build
+buildSrc/build
+/spring-*/build
+/spring-core/kotlin-coroutines/build
+/framework-bom/build
+/integration-tests/build
+/src/asciidoc/build
+target/
+
+# Eclipse artifacts, including WTP generated manifests
+.classpath
+.project
+spring-*/src/main/java/META-INF/MANIFEST.MF
+
+# IDEA配置
+*.ipr
+*.iws
+.idea
+out
+test-output
+atlassian-ide-plugin.xml
+.gradletasknamecache
+
+# obsidian配置
+.obsidian/plugins/remember-cursor-position
+.obsidian/plugins/obsidian-git
+.obsidian/plugins/recent-files-obsidian
+.obsidian/plugins/text-extractor/cache
+.obsidian/workspace.json
+.obsidian/vault-stats.json
+
+# 远端服务器配置
+nohup.out
+
+# vscode配置文件
+.vscode/
