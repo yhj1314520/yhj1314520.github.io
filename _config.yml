@@ -103,7 +103,7 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/yhj1314520/yhj1314520.github.io
+  repo: git@github.com:yhj1314520/yhj1314520.github.io.git
   branch: release
 
 # Generate categories from directory-tree
