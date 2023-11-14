@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: CoachHe's Blog
+title: Henry's Blog
 subtitle: ''
 description: ''
 keywords:
-author: CoachHe
+author: HenryYHJ
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: httpS://yhj1314520.github.io
 permalink: :year/:month/:hash.html
 permalink_defaults:
 pretty_urls:
@@ -103,7 +103,7 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/CoachHe/coachhe.github.io
+  repo: https://github.com/yhj1314520/yhj1314520.github.io
   branch: release
 
 # Generate categories from directory-tree
