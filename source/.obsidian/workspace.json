@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "about/index.md",
+                "file": "_goal/actTrack/2023-11-16.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 258.5
   },
   "right": {
     "id": "892cb46a5a09f5b6",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "about/index.md",
+                "file": "_goal/actTrack/2023-11-16.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "about/index.md",
+                "file": "_goal/actTrack/2023-11-16.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,16 +125,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "about/index.md"
+                "file": "_goal/actTrack/2023-11-16.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,21 +148,33 @@
   },
   "active": "afa1ebbe81b17a43",
   "lastOpenFiles": [
-    "_posts/后端/编程语言/Java/Language/线程八股.md",
-    "_posts/后端/编程语言/Java/Language/集合八股.md",
+    "_goal/LearningPlan.md",
+    "_goal/actTrack/2023-11-16.md",
+    "_goal/trash.md",
+    "_goal/actTrack",
+    "_posts/后端/CodingLanguage/Java/Spring/SpringTransaction配置.md",
+    "_posts/QAofWork",
+    "_posts/后端/CodingLanguage/Java/Spring/Spring八股.md",
+    "_posts/后端/CodingLanguage/Java/Spring/SpringCloud八股.md",
+    "_posts/后端/Database/MySQL/MySQL八股.md",
+    "_trash",
+    "_posts/后端/CodingLanguage/Java/Language/JVM八股.md",
+    "_posts/后端/CodingLanguage/Java/Language/线程八股.md",
+    "_posts/后端/CodingLanguage/Java/Language/集合八股.md",
+    "_posts/后端/CodingLanguage/Java/Language/Java特性八股.md",
+    "_goal",
+    "_posts/后端/Redis/Redis八股.md",
+    "_posts/后端/Database/MongoDB/MongoDB八股.md",
+    "_posts/后端/Database/MongoDB/Untitled",
+    "_posts/后端/Database/ElasticSearch",
+    "_posts/后端/Database/MongoDB",
+    "_posts/后端/Database/MySQL",
+    "_posts/后端/Database",
+    "_posts/后端/CodingLanguage/Java/MyBatis/MyBatis八股.md",
+    "_posts/后端/编程语言/Java/Spring/SpringBoot八股.md",
     "about/index.md",
     "remark/index.md",
-    "_posts/后端/编程语言/Java/SpringBoot/Spring八股.md",
     "_posts/Leetcode",
-    "_posts/后端/编程语言/Python",
-    "_posts/后端/编程语言",
-    "_obsidian/PostTemplate.md",
-    "_posts/后端/编程语言/Java/MyBatis",
-    "_posts/后端/编程语言/Java/SpringBoot",
-    "_posts/后端/编程语言/Java/Language",
-    "_posts/后端/Docker",
-    "_posts/后端/Redis",
-    "_posts/后端/编程语言/Java",
-    "_posts/AI/FaceAI"
+    "_obsidian/PostTemplate.md"
   ]
 }
