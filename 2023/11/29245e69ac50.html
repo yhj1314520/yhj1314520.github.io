@@ -16,21 +16,23 @@
   <meta name="author" content="HenryYHJ">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="线程八股">
-<meta property="og:url" content="https://yhj1314520.github.io/2023/11/4b0eb489593c.html">
+    <meta name="description" content="数据源保证应用程序与目标数据之间交互规范和协议的数据库或文件系统—-对数据库交互操作的抽象特性是封装了建立连接，向外暴露获取连接的接口 不提供连接池Spring中提供的数据源，例如DriverManagerDataSource对每个连接请求建立新的连接，程序使用完毕后销毁，交互频繁时明显存在大量时空开销建议仅在测试时使用 提供连接池创建和管理一组连接对象的技术，以Apaceh Jakarta Co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring数据源配置">
+<meta property="og:url" content="https://yhj1314520.github.io/2023/11/29245e69ac50.html">
 <meta property="og:site_name" content="Henry&#39;s Blog">
+<meta property="og:description" content="数据源保证应用程序与目标数据之间交互规范和协议的数据库或文件系统—-对数据库交互操作的抽象特性是封装了建立连接，向外暴露获取连接的接口 不提供连接池Spring中提供的数据源，例如DriverManagerDataSource对每个连接请求建立新的连接，程序使用完毕后销毁，交互频繁时明显存在大量时空开销建议仅在测试时使用 提供连接池创建和管理一组连接对象的技术，以Apaceh Jakarta Co">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-14T14:33:57.000Z">
-<meta property="article:modified_time" content="2023-11-14T14:40:43.818Z">
+<meta property="article:published_time" content="2023-11-16T03:36:19.000Z">
+<meta property="article:modified_time" content="2023-11-16T12:27:24.639Z">
 <meta property="article:author" content="HenryYHJ">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="Thread">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="CodingExp">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>线程八股 - Henry&#39;s Blog</title>
+  <title>Spring数据源配置 - Henry&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -220,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="线程八股"></span>
+            <span id="subtitle" data-typed-text="Spring数据源配置"></span>
           
         </div>
 
@@ -231,8 +233,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-14 22:33" pubdate>
-          2023年11月14日 晚上
+        <time datetime="2023-11-16 11:36" pubdate>
+          2023年11月16日 中午
         </time>
       </span>
     
@@ -243,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1.8k 字
         
       </span>
     
@@ -254,7 +256,7 @@
         
         
         
-          1 分钟
+          15 分钟
         
       </span>
     
@@ -292,12 +294,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">线程八股</h1>
+            <h1 style="display: none">Spring数据源配置</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h2 id="数据源"><a href="#数据源" class="headerlink" title="数据源"></a>数据源</h2><p>保证应用程序与目标数据之间交互规范和协议的数据库或文件系统—-对数据库交互操作的抽象<br>特性是封装了建立连接，向外暴露获取连接的接口</p>
+<h3 id="不提供连接池"><a href="#不提供连接池" class="headerlink" title="不提供连接池"></a>不提供连接池</h3><p>Spring中提供的数据源，例如DriverManagerDataSource<br><strong>对每个连接请求建立新的连接，程序使用完毕后销毁</strong>，交互频繁时明显存在大量时空开销<br>建议仅在测试时使用</p>
+<h3 id="提供连接池"><a href="#提供连接池" class="headerlink" title="提供连接池"></a>提供连接池</h3><p>创建和管理一组连接对象的技术，以Apaceh Jakarta Commons DBCP adn C3P0为例</p>
+<h4 id="Apache连接池技术"><a href="#Apache连接池技术" class="headerlink" title="Apache连接池技术"></a>Apache连接池技术</h4><h2 id="数据源配置"><a href="#数据源配置" class="headerlink" title="数据源配置"></a>数据源配置</h2><p>无论是自动配置还是手动配置，均需要在pom.xml添加相关依赖<br>eg:</p>
+<h3 id="SpringBoot自动配置"><a href="#SpringBoot自动配置" class="headerlink" title="SpringBoot自动配置"></a>SpringBoot自动配置</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>在<code>application.propertites</code>或<code>application.yml</code>文件中添加以下配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//</span><br>spring.datasource.url=jdbc:mysql:<span class="hljs-comment">//localhost/test</span><br><span class="hljs-comment">//</span><br>spring.datasource.username=...<br><span class="hljs-comment">//</span><br>spring.datasource.paddword=...<br><span class="hljs-comment">//数据库驱动程序类名</span><br>spring.datasource.driver-class-name=com.mysql.jdbc.Driver<br><span class="hljs-comment">//配置数据源类型，默认情况下使用HikariCP，其他则需要在pom.xml文件中添加相应的依赖项</span><br>spring.datasource.type=....<br><span class="hljs-comment">//配置连接池大小</span><br>spring.datasource.hikari.maximum-pool-size=<br><span class="hljs-comment">//</span><br><br><span class="hljs-comment">//</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="手动配置"><a href="#手动配置" class="headerlink" title="手动配置"></a>手动配置</h3><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> calss DataSourceConfig&#123;<br>	<span class="hljs-meta">@Bean</span><br>	<span class="hljs-keyword">public</span> DataSource <span class="hljs-title function_">dataSource</span><span class="hljs-params">()</span>&#123;<br>		<span class="hljs-type">DriverManagerDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DriverManagerDataSource</span>();<br>		dataSource.setDriverClassName(<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span>);<br>		dataSource.setUrl...<br>		<span class="hljs-keyword">return</span> dataSource;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>通过Configuration注解将该类标记为配置类，通过Bean注解将dataSource标记为Bean</p>
+<h2 id="多数据源配置"><a href="#多数据源配置" class="headerlink" title="多数据源配置"></a>多数据源配置</h2><p>如果需要同时连接多个数据库，在SpringBoot中使用多数据源</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DataSource</span> Config&#123;<br>	<span class="hljs-meta">@Bean(name=&quot;primaryDataSource&quot;)</span><br>	<span class="hljs-meta">@Primary</span><br>	<span class="hljs-meta">@ConfigurationProperties(prefix=&quot;spring.datasource.primary&quot;)</span><br>	<span class="hljs-keyword">public</span> DataSource <span class="hljs-title function_">primaryDataSource</span><span class="hljs-params">()</span>&#123;<br>		<span class="hljs-keyword">return</span> DataSourceBuilder.create().build();<br>	&#125;<br>	<span class="hljs-meta">@Bean(name=&quot;secondaryDataSource&quot;)</span><br>	<span class="hljs-meta">@ConfigurationProperties(prefix=&quot;spring.datasource.secondary&quot;)</span><br>	<span class="hljs-keyword">public</span> DataSource <span class="hljs-title function_">secondaryDataSource</span><span class="hljs-params">()</span>&#123;<br>		<span class="hljs-keyword">return</span> DataSourceBuilder.create().build();<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>通过使用@ConfigurationProperties注解来指定配置文件中的前缀，确保SpringBoot自动将属性绑定到DataSource对象上。<br>通过@Primary注解确保没有指定具体的数据源名称时，自动选择primary</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1]<a target="_blank" rel="noopener" href="https://cloud.tecent.com/developer/article/2258704">https://cloud.tecent.com/developer/article/2258704</a><br>[2]<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903654223265800#heading-2">https://juejin.cn/post/6844903654223265800#heading-2</a></p>
+
                 
               </div>
             
@@ -318,27 +333,6 @@
   <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
   
   
-    <span>></span>
-    
-  <a href="/categories/%E5%90%8E%E7%AB%AF/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-chain-item">编程语言</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%90%8E%E7%AB%AF/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/" class="category-chain-item">Java</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%90%8E%E7%AB%AF/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Language/" class="category-chain-item">Language</a>
-  
-  
-
-  
-
-  
-
-  
 
       </span>
     
@@ -351,9 +345,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java/">#Java</a>
+        <a href="/tags/Spring/">#Spring</a>
       
-        <a href="/tags/Thread/">#Thread</a>
+        <a href="/tags/CodingExp/">#CodingExp</a>
       
     </div>
   
@@ -365,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>线程八股</div>
-      <div>https://yhj1314520.github.io/2023/11/4b0eb489593c.html</div>
+      <div>Spring数据源配置</div>
+      <div>https://yhj1314520.github.io/2023/11/29245e69ac50.html</div>
     </div>
     <div class="license-meta">
       
@@ -378,7 +372,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月14日</div>
+          <div>2023年11月16日</div>
         </div>
       
       
@@ -410,9 +404,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/0dc54c3f5883.html" title="Spring八股">
+                      <a href="/2023/11/b864d8044ae9.html" title="DockerFile">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Spring八股</span>
+                        <span class="hidden-mobile">DockerFile</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -420,8 +414,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/1206dae8c6e8.html" title="集合八股">
-                        <span class="hidden-mobile">集合八股</span>
+                      <a href="/2023/11/d3c46eed3e7c.html" title="SpringTransaction配置">
+                        <span class="hidden-mobile">SpringTransaction配置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -441,8 +435,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://yhj1314520.github.io/2023/11/4b0eb489593c.html';
-          this.page.identifier = '/2023/11/4b0eb489593c.html';
+          this.page.url = 'https://yhj1314520.github.io/2023/11/29245e69ac50.html';
+          this.page.identifier = '/2023/11/29245e69ac50.html';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
