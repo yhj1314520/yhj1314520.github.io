@@ -1,10 +1,14 @@
 ---
 title: MongoDB八股
-date: 2023-11-15 15:33:48
 tags:
   - 基础知识
   - Database
   - MongoDB
+categories:
+  - 后端
+  - Database
+  - MongoDB
+date: 2023-11-15 15:33:48
 ---
 ## 基础
 ### 定义

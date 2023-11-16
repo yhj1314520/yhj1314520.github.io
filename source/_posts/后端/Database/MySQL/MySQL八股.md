@@ -1,10 +1,14 @@
 ---
 title: MySQL八股
-date: 2023-11-15 15:28:30
 tags:
   - 基础知识
   - Database
   - MySQL
+categories:
+  - 后端
+  - Database
+  - MySQL
+date: 2023-11-15 15:28:30
 ---
 ## 基础
 ### 定义

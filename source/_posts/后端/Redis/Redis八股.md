@@ -1,9 +1,12 @@
 ---
 title: Redis八股
-date: 2023-11-15 15:03:19
 tags:
   - Redis
   - 基础知识
+categories:
+  - 后端
+  - Redis
+date: 2023-11-15 15:03:19
 ---
 ## 基础知识
 ### 数据类型

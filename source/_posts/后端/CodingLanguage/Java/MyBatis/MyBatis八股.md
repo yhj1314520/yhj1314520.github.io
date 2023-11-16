@@ -1,10 +1,15 @@
 ---
 title: MyBatis八股
-date: 2023-11-15 14:58:20
 tags:
   - Java
   - MyBatis
   - 基础知识
+categories:
+  - 后端
+  - CodingLanguage
+  - Java
+  - MyBatis
+date: 2023-11-15 14:58:20
 ---
 ## MyBatis
 ### 定义

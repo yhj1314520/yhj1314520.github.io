@@ -1,9 +1,14 @@
 ---
 title: SpringTransaction配置
-date: 2023-11-15 16:33:32
 tags:
   - Spring
   - CodingExp
+categories:
+  - 后端
+  - CodingLanguage
+  - Java
+  - Spring
+date: 2023-11-15 16:33:32
 ---
 ## Spring 声明式事务
 ### 基于XML配置

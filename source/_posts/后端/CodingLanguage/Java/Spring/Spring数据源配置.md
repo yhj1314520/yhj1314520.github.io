@@ -1,9 +1,14 @@
 ---
 title: Spring数据源配置
-date: 2023-11-16 11:36:19
 tags:
   - Spring
   - CodingExp
+categories:
+  - 后端
+  - CodingLanguage
+  - Java
+  - Spring
+date: 2023-11-16 11:36:19
 ---
 ## 数据源
 保证应用程序与目标数据之间交互规范和协议的数据库或文件系统----对数据库交互操作的抽象
