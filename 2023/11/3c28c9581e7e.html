@@ -16,18 +16,18 @@
   <meta name="author" content="HenryYHJ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基础知识数据类型数据结构持久化AOF(AppendOnlyFile)RDB(redisDatabase)网络模型缓存三问缓存雪崩缓存穿透缓存击穿缓存&amp;DB一致性消息队列List实现Pub&#x2F;Sub实现ZSet实现Stream实现问题对比Kafka对比RabbitMQ分布式锁实现原理Rediss 实现zookeeper实现主从同步哨兵集群">
+    <meta name="description" content="ReadMe基础知识数据类型数据结构持久化AOF(AppendOnlyFile)RDB(redisDatabase)网络模型缓存三问缓存雪崩缓存穿透缓存击穿缓存&amp;DB一致性消息队列List实现Pub&#x2F;Sub实现ZSet实现Stream实现问题对比Kafka对比RabbitMQ分布式锁实现原理 CAP理论，即C(consistency)一致性、A(Availabilty)可用性、P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis八股">
 <meta property="og:url" content="https://yhj1314520.github.io/2023/11/3c28c9581e7e.html">
 <meta property="og:site_name" content="Henry&#39;s Blog">
-<meta property="og:description" content="基础知识数据类型数据结构持久化AOF(AppendOnlyFile)RDB(redisDatabase)网络模型缓存三问缓存雪崩缓存穿透缓存击穿缓存&amp;DB一致性消息队列List实现Pub&#x2F;Sub实现ZSet实现Stream实现问题对比Kafka对比RabbitMQ分布式锁实现原理Rediss 实现zookeeper实现主从同步哨兵集群">
+<meta property="og:description" content="ReadMe基础知识数据类型数据结构持久化AOF(AppendOnlyFile)RDB(redisDatabase)网络模型缓存三问缓存雪崩缓存穿透缓存击穿缓存&amp;DB一致性消息队列List实现Pub&#x2F;Sub实现ZSet实现Stream实现问题对比Kafka对比RabbitMQ分布式锁实现原理 CAP理论，即C(consistency)一致性、A(Availabilty)可用性、P">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-15T07:03:19.000Z">
-<meta property="article:modified_time" content="2023-11-16T15:02:20.255Z">
+<meta property="article:modified_time" content="2023-11-21T13:21:24.590Z">
 <meta property="article:author" content="HenryYHJ">
-<meta property="article:tag" content="Redis">
 <meta property="article:tag" content="基础知识">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          176 字
+          1.1k 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          2 分钟
+          9 分钟
         
       </span>
     
@@ -299,7 +299,23 @@
             
               <div class="markdown-body">
                 
-                <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><h4 id="AOF-AppendOnlyFile"><a href="#AOF-AppendOnlyFile" class="headerlink" title="AOF(AppendOnlyFile)"></a>AOF(AppendOnlyFile)</h4><h4 id="RDB-redisDatabase"><a href="#RDB-redisDatabase" class="headerlink" title="RDB(redisDatabase)"></a>RDB(redisDatabase)</h4><h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><h3 id="三问"><a href="#三问" class="headerlink" title="三问"></a>三问</h3><h4 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h4><h4 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h4><h4 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h4><h4 id="缓存-amp-DB一致性"><a href="#缓存-amp-DB一致性" class="headerlink" title="缓存&amp;DB一致性"></a>缓存&amp;DB一致性</h4><h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><h3 id="List实现"><a href="#List实现" class="headerlink" title="List实现"></a>List实现</h3><h3 id="Pub-x2F-Sub实现"><a href="#Pub-x2F-Sub实现" class="headerlink" title="Pub&#x2F;Sub实现"></a>Pub&#x2F;Sub实现</h3><h3 id="ZSet实现"><a href="#ZSet实现" class="headerlink" title="ZSet实现"></a>ZSet实现</h3><h3 id="Stream实现"><a href="#Stream实现" class="headerlink" title="Stream实现"></a>Stream实现</h3><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h3 id="对比Kafka"><a href="#对比Kafka" class="headerlink" title="对比Kafka"></a>对比Kafka</h3><h3 id="对比RabbitMQ"><a href="#对比RabbitMQ" class="headerlink" title="对比RabbitMQ"></a>对比RabbitMQ</h3><h2 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h2><h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><h3 id="Rediss-实现"><a href="#Rediss-实现" class="headerlink" title="Rediss 实现"></a>Rediss 实现</h3><h3 id="zookeeper实现"><a href="#zookeeper实现" class="headerlink" title="zookeeper实现"></a>zookeeper实现</h3><h2 id="主从同步"><a href="#主从同步" class="headerlink" title="主从同步"></a>主从同步</h2><h3 id="哨兵"><a href="#哨兵" class="headerlink" title="哨兵"></a>哨兵</h3><h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3>
+                <h2 id="ReadMe"><a href="#ReadMe" class="headerlink" title="ReadMe"></a>ReadMe</h2><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><h4 id="AOF-AppendOnlyFile"><a href="#AOF-AppendOnlyFile" class="headerlink" title="AOF(AppendOnlyFile)"></a>AOF(AppendOnlyFile)</h4><h4 id="RDB-redisDatabase"><a href="#RDB-redisDatabase" class="headerlink" title="RDB(redisDatabase)"></a>RDB(redisDatabase)</h4><h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><h3 id="三问"><a href="#三问" class="headerlink" title="三问"></a>三问</h3><h4 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h4><h4 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h4><h4 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h4><h4 id="缓存-amp-DB一致性"><a href="#缓存-amp-DB一致性" class="headerlink" title="缓存&amp;DB一致性"></a>缓存&amp;DB一致性</h4><h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><h3 id="List实现"><a href="#List实现" class="headerlink" title="List实现"></a>List实现</h3><h3 id="Pub-x2F-Sub实现"><a href="#Pub-x2F-Sub实现" class="headerlink" title="Pub&#x2F;Sub实现"></a>Pub&#x2F;Sub实现</h3><h3 id="ZSet实现"><a href="#ZSet实现" class="headerlink" title="ZSet实现"></a>ZSet实现</h3><h3 id="Stream实现"><a href="#Stream实现" class="headerlink" title="Stream实现"></a>Stream实现</h3><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h3 id="对比Kafka"><a href="#对比Kafka" class="headerlink" title="对比Kafka"></a>对比Kafka</h3><h3 id="对比RabbitMQ"><a href="#对比RabbitMQ" class="headerlink" title="对比RabbitMQ"></a>对比RabbitMQ</h3><h2 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h2><h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p> CAP理论，即C(consistency)一致性、A(Availabilty)可用性、P(Partition tolerance)分区容错性<br> P是必要因素，所以分为AP&amp;CP两种，核心在于一致性是否牺牲</p>
+<h3 id="Rediss-实现-AP"><a href="#Rediss-实现-AP" class="headerlink" title="Rediss 实现-AP"></a>Rediss 实现-AP</h3><h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>AP模式下的分布式锁，目的在于保证系统的<strong>可用性</strong>，要求数据一致性不严苛。</p>
+<ol>
+<li>SETNEX: key不存在的情况下，设置value，否则不做操作。设置成功返回为1，失败为0</li>
+<li>EXPIRE: 设置过期时间（避免死锁）</li>
+<li>lua脚本确保上锁的原子操作（避免死锁）</li>
+<li>释放锁通过删除del实现<ol>
+<li>value字段添加当前线程id(锁标识)，避免误删</li>
+</ol>
+</li>
+<li>可重入（记录加锁次数以及锁标识，Map结构）</li>
+<li>自动续期（避免业务时间过长或锁持有时间太短）</li>
+</ol>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><h5 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h5><h5 id="Redission"><a href="#Redission" class="headerlink" title="Redission"></a>Redission</h5><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><p>Redis存储结构无法保证主从节点数据的一致性，无法保证主节点宕机时，所有数据自动同步到从节点。Redis分布式锁会在主节点宕机情况下，<strong>丢失锁信息</strong>，出现重复上锁</p>
+<h3 id="zookeeper实现-CP"><a href="#zookeeper实现-CP" class="headerlink" title="zookeeper实现-CP"></a>zookeeper实现-CP</h3><h4 id="目的-1"><a href="#目的-1" class="headerlink" title="目的"></a>目的</h4><p>zookeeper有一种节点类型为临时序号节点，按序号自增创建临时节点。<br>其创建可以分为读锁和写锁<br>读锁获取：<br>    1、根据资源ID创建临时序号节点：&#x2F;lock&#x2F;mylcokR0005 Read<br>    2、获取&#x2F;lock下所有子节点，判断比它小的节点是否<strong>全是</strong>读锁，如果是则获取成功<br>    3、如果不是（表明有写锁），阻塞等待，监听自己前一个节点<br>    4、当前面一个节点<strong>发生变更</strong>(删除)，重新执行第二步<br>写锁获取：<br>    1、根据资源ID创建临时序号节点：&#x2F;lock&#x2F;mylcokR0006 Write<br>    2、获取&#x2F;lock下所有子节点，<strong>判断最小的节点是否是自己</strong>，如果是则上锁<br>    3、如果不是，则阻塞等待，监听前一个节点<br>    4、当前一个节点发生变更(删除)，重新执行第二步</p>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h4><p>[1]<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41401800/article/details/106764515">https://blog.csdn.net/qq_41401800/article/details/106764515</a><br>[2]<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41973594/article/details/113576268">https://blog.csdn.net/qq_41973594/article/details/113576268</a></p>
+<h2 id="主从同步"><a href="#主从同步" class="headerlink" title="主从同步"></a>主从同步</h2><h3 id="哨兵"><a href="#哨兵" class="headerlink" title="哨兵"></a>哨兵</h3><h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3>
                 
               </div>
             
@@ -339,9 +355,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Redis/">#Redis</a>
-      
         <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>
+      
+        <a href="/tags/Redis/">#Redis</a>
       
     </div>
   

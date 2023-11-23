@@ -16,15 +16,15 @@
   <meta name="author" content="HenryYHJ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="定义Dockerfile是一个用来构建镜像的文本文件，文本内容包含一条条构建镜像所需的指令和说明。其目的是为了构建镜像，不同环境下可以复现相同的容器。每个指令都会在镜像的构建过程中创建一个新的镜像层  包含指令感谢[https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;2327632] FROM第一个指令，必须的指令 用于指定构建新镜像时所基于的基础镜像，可以是官">
+    <meta name="description" content="ReadMe定义Dockerfile是一个用来构建镜像的文本文件，文本内容包含一条条构建镜像所需的指令和说明。其目的是为了构建镜像，不同环境下可以复现相同的容器。每个指令都会在镜像的构建过程中创建一个新的镜像层  包含指令感谢[https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;2327632] FROM第一个指令，必须的指令 用于指定构建新镜像时所基于的基础镜">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DockerFile">
 <meta property="og:url" content="https://yhj1314520.github.io/2023/11/b864d8044ae9.html">
 <meta property="og:site_name" content="Henry&#39;s Blog">
-<meta property="og:description" content="定义Dockerfile是一个用来构建镜像的文本文件，文本内容包含一条条构建镜像所需的指令和说明。其目的是为了构建镜像，不同环境下可以复现相同的容器。每个指令都会在镜像的构建过程中创建一个新的镜像层  包含指令感谢[https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;2327632] FROM第一个指令，必须的指令 用于指定构建新镜像时所基于的基础镜像，可以是官">
+<meta property="og:description" content="ReadMe定义Dockerfile是一个用来构建镜像的文本文件，文本内容包含一条条构建镜像所需的指令和说明。其目的是为了构建镜像，不同环境下可以复现相同的容器。每个指令都会在镜像的构建过程中创建一个新的镜像层  包含指令感谢[https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;2327632] FROM第一个指令，必须的指令 用于指定构建新镜像时所基于的基础镜">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-16T07:57:48.000Z">
-<meta property="article:modified_time" content="2023-11-16T15:02:20.255Z">
+<meta property="article:modified_time" content="2023-11-21T13:21:34.070Z">
 <meta property="article:author" content="HenryYHJ">
 <meta property="article:tag" content="基础知识">
 <meta property="article:tag" content="Docker">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          3.1k 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          18 分钟
+          26 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>Dockerfile是一个用来构建镜像的文本文件，文本内容包含一条条构建镜像所需的指令和说明。其目的是为了构建镜像，不同环境下可以复现相同的容器。<br>每个指令都会在镜像的构建过程中创建一个<strong>新的镜像层</strong> </p>
+                <h2 id="ReadMe"><a href="#ReadMe" class="headerlink" title="ReadMe"></a>ReadMe</h2><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>Dockerfile是一个用来构建镜像的文本文件，文本内容包含一条条构建镜像所需的指令和说明。其目的是为了构建镜像，不同环境下可以复现相同的容器。<br>每个指令都会在镜像的构建过程中创建一个<strong>新的镜像层</strong> </p>
 <h2 id="包含指令"><a href="#包含指令" class="headerlink" title="包含指令"></a>包含指令</h2><p>感谢[<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2327632]">https://cloud.tencent.com/developer/article/2327632]</a></p>
 <h4 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h4><p><strong>第一个指令，必须的指令</strong> 用于指定构建新镜像时所基于的基础镜像，可以是官方的也可以是他人的</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">格式：<br>	<span class="hljs-keyword">FROM</span> &lt;image&gt;<br>	<span class="hljs-keyword">FROM</span> &lt;image&gt;:&lt;tag&gt;<br>示例：<br>	<span class="hljs-keyword">FROM</span> nginx:<span class="hljs-number">1.25</span>.<span class="hljs-number">1</span>-alpine<br></code></pre></td></tr></table></figure>
@@ -321,9 +321,27 @@
 提供其他参数<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">$ docker <span class="hljs-built_in">run</span> my_image <span class="hljs-string">&quot;World&quot;</span><br>Hello World<br></code></pre></td></tr></table></figure>
 可以使用ENTRYPOINT指令定义一个可执行的程序或脚本，容器启动时运行该程序，将Docker容器作为可执行应用来使用</li>
 </ul>
-<h4 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h4><p>用于声明容器在运行时监听的网络端口，<strong>不会实际打开或映射端口</strong>，而是作为一个文档功能，用于告知程序将使用指定的端口</p>
-<h4 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h4><h4 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h4><h4 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h4><h4 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h4><h4 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h4><h4 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h4><h4 id="ARG"><a href="#ARG" class="headerlink" title="ARG"></a>ARG</h4><h4 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h4><h4 id="STOPSIGNAL"><a href="#STOPSIGNAL" class="headerlink" title="STOPSIGNAL"></a>STOPSIGNAL</h4><h4 id="HEALTHCHECK"><a href="#HEALTHCHECK" class="headerlink" title="HEALTHCHECK"></a>HEALTHCHECK</h4><h4 id="SHELL"><a href="#SHELL" class="headerlink" title="SHELL"></a>SHELL</h4><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># 使用官方的python 3基础镜像</span><br><span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3</span><br><span class="hljs-comment"># 将当前目录下的文件复制到镜像中的 /APP目录中</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . /APP</span><br><span class="hljs-comment">#设置工作目录为</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /APP</span><br><span class="hljs-comment">#安装依赖包（自定义的requirements.txt）</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pip install -r requirements.txt</span><br><span class="hljs-comment">#暴露容器监听端口</span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">80</span><br><span class="hljs-comment">#定义容器启动时运行的命令</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;python&quot;</span>, <span class="hljs-string">&quot;app.py&quot;</span>]</span><br></code></pre></td></tr></table></figure>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1]<a target="_blank" rel="noopener" href="https://cloud.tecent.com/developer/article/2327632">https://cloud.tecent.com/developer/article/2327632</a><br>[2]</p>
+<h4 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h4><p>用于声明容器在运行时监听的网络端口，<strong>不会实际打开或映射端口</strong>，而是作为一个文档功能，用于告知程序将使用指定的端口。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> ubuntu:latest<br><span class="hljs-comment"># 声明容器将监听80端口</span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">80</span><br></code></pre></td></tr></table></figure>
+<p>在使用docker run命令启动容器时，如果需要通过主机访问容器的80端口，需要使用**-p选项进行端口映射**</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">$ docker run -p <span class="hljs-number">8080</span>:<span class="hljs-number">80</span> my_image<br>//这样可以通过主机的<span class="hljs-number">8080</span>端口访问容器的服务<br></code></pre></td></tr></table></figure>
+
+<h4 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h4><p>用于将文件、目录或远程URL复制到镜像中，支持<strong>自动解压缩</strong>，将压缩文件解压至指定目录下</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">格式：<br>	<span class="hljs-keyword">ADD</span><span class="language-bash"> SOURCE DESTINATION</span><br>示例：<br>	<span class="hljs-keyword">ADD</span><span class="language-bash"> https://...... /tmp/</span><br></code></pre></td></tr></table></figure>
+<h4 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h4><p>相比于ADD指令，缺少自动解压功能。在复制文件的场景下，推荐使用COPY，避免引起不必要的意外行为。</p>
+<h4 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h4><p>设置环境变量的指令，环境变量在容器运行时可用</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">格式：<br>	<span class="hljs-keyword">ENV</span> KEY VALUE<br>示例：<br>	<span class="hljs-keyword">ENV</span> MY_NAME  HENRY<br>	<span class="hljs-keyword">RUN</span><span class="language-bash"> <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$MY_NAME</span></span><br>	<span class="hljs-keyword">CMD</span><span class="language-bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Hello, <span class="hljs-variable">$MY_NAME</span>&quot;</span></span><br></code></pre></td></tr></table></figure>
+<p>同时可以通过docker run命令的-e选项覆盖环境变量值</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">$ docker <span class="hljs-built_in">run</span> -e <span class="hljs-attribute">MY_NAME</span>=<span class="hljs-string">&quot;ALICE&quot;</span> my_image<br></code></pre></td></tr></table></figure>
+<h4 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h4><h4 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h4><p>设置工作目录(当前目录)，容器启动时，进程的当前工作目录将被设置为WORKDIR指令指定的目录</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> ubuntu:latest<br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /APP</span><br></code></pre></td></tr></table></figure>
+<h4 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h4><h4 id="ARG"><a href="#ARG" class="headerlink" title="ARG"></a>ARG</h4><h4 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h4><h4 id="STOPSIGNAL"><a href="#STOPSIGNAL" class="headerlink" title="STOPSIGNAL"></a>STOPSIGNAL</h4><h4 id="HEALTHCHECK"><a href="#HEALTHCHECK" class="headerlink" title="HEALTHCHECK"></a>HEALTHCHECK</h4><h4 id="SHELL"><a href="#SHELL" class="headerlink" title="SHELL"></a>SHELL</h4><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># 使用官方的python 3基础镜像</span><br><span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3</span><br><span class="hljs-comment"># 将当前目录下的文件复制到镜像中的 /APP目录中</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . /APP</span><br><span class="hljs-comment">#设置工作目录为</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /APP</span><br><span class="hljs-comment">#安装依赖包（自定义的requirements.txt）</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pip install -r requirements.txt</span><br><span class="hljs-comment">#暴露容器监听端口</span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">80</span><br><span class="hljs-comment">#定义容器启动时运行的命令</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;python&quot;</span>, <span class="hljs-string">&quot;app.py&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><h4 id="多阶段构建"><a href="#多阶段构建" class="headerlink" title="多阶段构建"></a>多阶段构建</h4><p>在一个Dockerfile中使用多个FROM指令，每个FROM指令代表一个构建阶段。每个构建阶段，可以从之前的阶段复制所需的文件，并执行特定的构建操作。<strong>多阶段构建使得最终生成的镜像只包含运行应用程序所必须的依赖和文件</strong>，不包含构建过程中产生的不必要文件和依赖<br>eg:</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># 构建阶段1</span><br><span class="hljs-keyword">FROM</span> golang:<span class="hljs-number">1.17</span> as builder<br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> go build -o myapp <span class="hljs-comment"># 编译应用程序</span></span><br><span class="hljs-comment"># 构建阶段2</span><br><span class="hljs-keyword">FROM</span> alpine:latest<br><span class="hljs-comment"># 复制编译后的应用程序</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> --from=builder /app/myapp /usr/local/bin/</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /usr/local/bin</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;myapp&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+<h4 id="多层构建优化"><a href="#多层构建优化" class="headerlink" title="多层构建优化"></a>多层构建优化</h4><p>在一个Dockerfile中使用多个RUN指令来构建镜像，通过&amp;&amp;操作符将多个命令合并成一个，减少Docker镜像的大小</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1]<a target="_blank" rel="noopener" href="https://cloud.tecent.com/developer/article/2327632">https://cloud.tecent.com/developer/article/2327632</a><br>[2]</p>
 
                 
               </div>
