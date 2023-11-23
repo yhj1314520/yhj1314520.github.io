@@ -8,6 +8,8 @@ categories:
   - Docker
 date: 2023-11-16 15:57:48
 ---
+## ReadMe
+
 ## 定义
 Dockerfile是一个用来构建镜像的文本文件，文本内容包含一条条构建镜像所需的指令和说明。其目的是为了构建镜像，不同环境下可以复现相同的容器。
 每个指令都会在镜像的构建过程中创建一个**新的镜像层** 
@@ -83,15 +85,51 @@ Hello World
 ```
 可以使用ENTRYPOINT指令定义一个可执行的程序或脚本，容器启动时运行该程序，将Docker容器作为可执行应用来使用
 #### EXPOSE
-用于声明容器在运行时监听的网络端口，**不会实际打开或映射端口**，而是作为一个文档功能，用于告知程序将使用指定的端口
-
+用于声明容器在运行时监听的网络端口，**不会实际打开或映射端口**，而是作为一个文档功能，用于告知程序将使用指定的端口。
+```dockerfile
+FROM ubuntu:latest
+# 声明容器将监听80端口
+EXPOSE 80
+```
+在使用docker run命令启动容器时，如果需要通过主机访问容器的80端口，需要使用**-p选项进行端口映射**
+```cmd
+$ docker run -p 8080:80 my_image
+//这样可以通过主机的8080端口访问容器的服务
+```
 
 #### ADD
+用于将文件、目录或远程URL复制到镜像中，支持**自动解压缩**，将压缩文件解压至指定目录下
+```dockerfile
+格式：
+	ADD SOURCE DESTINATION
+示例：
+	ADD https://...... /tmp/
+```
 #### COPY
+相比于ADD指令，缺少自动解压功能。在复制文件的场景下，推荐使用COPY，避免引起不必要的意外行为。
 #### ENV
+设置环境变量的指令，环境变量在容器运行时可用
+```dockerfile
+格式：
+	ENV KEY VALUE
+示例：
+	ENV MY_NAME  HENRY
+	RUN mkdir $MY_NAME
+	CMD echo "Hello, $MY_NAME"
+```
+同时可以通过docker run命令的-e选项覆盖环境变量值
+```
+$ docker run -e MY_NAME="ALICE" my_image
+```
 #### VOLUME
 
+
 #### WORKDIR
+设置工作目录(当前目录)，容器启动时，进程的当前工作目录将被设置为WORKDIR指令指定的目录
+```dockerfile
+FROM ubuntu:latest
+WORKDIR /APP
+```
 #### USER
 #### ARG
 #### ONBUILD
@@ -114,7 +152,28 @@ EXPOSE 80
 #定义容器启动时运行的命令
 CMD ["python", "app.py"]
 ```
+
+
 ## 问题
+### 优化
+#### 多阶段构建
+在一个Dockerfile中使用多个FROM指令，每个FROM指令代表一个构建阶段。每个构建阶段，可以从之前的阶段复制所需的文件，并执行特定的构建操作。**多阶段构建使得最终生成的镜像只包含运行应用程序所必须的依赖和文件**，不包含构建过程中产生的不必要文件和依赖
+eg:
+```dockerfile
+# 构建阶段1
+FROM golang:1.17 as builder
+WORKDIR /app
+COPY . .
+RUN go build -o myapp # 编译应用程序
+# 构建阶段2
+FROM alpine:latest
+# 复制编译后的应用程序
+COPY --from=builder /app/myapp /usr/local/bin/
+WORKDIR /usr/local/bin
+CMD ["myapp"]
+```
+#### 多层构建优化
+在一个Dockerfile中使用多个RUN指令来构建镜像，通过&&操作符将多个命令合并成一个，减少Docker镜像的大小
 ## 参考文献
 [1]https://cloud.tecent.com/developer/article/2327632
 [2]
